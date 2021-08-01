@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "620502240400",
+    "project_id": "xasusqore",
+    "storage_bucket": "xasusqore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620502240400:android:4ca0abf252bbe1045adc15",
+        "android_client_info": {
+          "package_name": "com.baabale.xasus_qore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620502240400-vtvlosgud8djii78gs8ticniodn5p1fu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2Eu19aMcVkotwYkPc9uKvFpKbf3pYL3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620502240400-vtvlosgud8djii78gs8ticniodn5p1fu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:xasus_qore/models/note.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -9,6 +11,27 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  Future<List<Note>> getNotes() async {
+    final notesRef = firestore.collection('notes');
+    final data = await notesRef.get();
+    // await notesRef.doc('sooBqKFwYOwh3Km96skw').update({'title': 'Abdirahman'});
+    // List<Note> notes = [];
+
+    // for (int i = 0; i < data.docs.length; i++) {
+    //   Note note = Note.fromJson(data.docs[i].data());
+    //   notes.add(note);
+    // }
+
+    return data.docs.map((e) => Note.fromJson(e.data())).toList();
+
+    // data.docs.
+    // print(note.date);
+    // return notes;
+    // return data.docs;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,10 +81,22 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Expanded(
-              child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return NoteCard();
+              child: FutureBuilder<List<Note>>(
+                future: getNotes(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting)
+                    return Center(child: CircularProgressIndicator());
+
+                  final data = snapshot.data!;
+
+                  return Text(data[0].title);
+
+                  // return ListView.builder(
+                  //   itemCount: 5,
+                  //   itemBuilder: (context, index) {
+                  //     return NoteCard();
+                  //   },
+                  // );
                 },
               ),
             ),

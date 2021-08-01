@@ -1,4 +1,4 @@
-package com.example.xasus_qore
+package com.baabale.xasus_qore
 
 import io.flutter.embedding.android.FlutterActivity
 

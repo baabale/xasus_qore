@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.xasus_qore">
+    package="com.baabale.xasus_qore">
    <application
         android:label="xasus_qore"
         android:icon="@mipmap/ic_launcher">

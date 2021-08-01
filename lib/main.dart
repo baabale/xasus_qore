@@ -1,7 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:xasus_qore/screens/screens.dart';
 
-void main() => runApp(XasusQoreApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(XasusQoreApp());
+}
 
 class XasusQoreApp extends StatelessWidget {
   @override
